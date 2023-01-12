@@ -1,0 +1,13 @@
+-----------Assignment of chapter 2 igniting Our App----------
+
+Qtn 1: What is NPM?
+        Npm is world largest software package repository
+        This registry contain morethan 800000 (8lakh) softwares
+        Founded in 2014
+        Acuired by github in 2020
+        Open source developers use npm to share software
+        Full form fo NPM is not (Node Package Manager) but exept this all is 
+        
+
+
+Qtn 2: What is Parcel/Webpack? Why we need it?        

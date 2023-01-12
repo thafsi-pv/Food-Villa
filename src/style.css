@@ -1,0 +1,147 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+}
+.bg-red{
+    background-color: red;
+}
+.color{color: rebeccapurple;}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.nav{
+    margin-top: 10px;
+}
+.nav-items{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+.nav-items > li {
+    display: flex;
+    padding: 20px;
+    list-style: none;
+    font-weight: 500;
+    justify-items:center;
+}
+
+.logo{
+    font-size: 25px;
+    padding: 20px 0px 0px 30px;
+    margin-top: 0;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logospan{
+    color: orange;
+}
+
+.ico{
+    width:20px;
+    height:20px;
+   padding-right: 5px;
+}
+
+.restroimg{
+    width: 254px;
+    height: 160px;
+}
+.restro{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 260px;
+    margin-bottom: 15px;
+}
+
+.restroname{
+    font-size: 17px;
+    font-weight: 500;
+    word-break: break-word;
+}
+.cusine{
+    color: #686b78;
+    font-size: 13px;
+    margin-top: 4px;
+
+}
+.restrostar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 18px;
+    font-size: 12px;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: #535665;
+}
+
+.starcont {
+    background-color: #48c479;
+    color: #fff;
+}
+
+.starico {
+    height: 20px;
+    width: 13px;
+    padding: 0 5px;
+    font-weight: 400;
+}
+
+.star {
+    font-size: 10px;
+    margin-right: 4px;
+    position: relative;
+    top: -1px;
+}
+.couponcont {
+    border-top: 1px solid #e9e9eb;
+    padding-top: 14px;
+    margin-top: 14px;
+    color: #8a584b;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 600;
+}
+.offerico{
+        width: 22px;
+        height: 32px;
+        margin-right: 4px;
+        transform: rotate3d(0);
+        -ms-transform-origin: center center;
+        transform-origin: center center;
+        
+}
+
+.sNAfh {
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hovernow {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .hovernow:hover {
+    box-shadow: 0 3px 5px rgba(101, 101, 101, 0.8);
+    cursor: pointer;
+  }
+
+  .bodycontainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 1200px;
+    margin-top: 50px;
+  }
