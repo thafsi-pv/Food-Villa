@@ -1,0 +1,179 @@
+Chapter 08 :Let's get Classy
+=================================================
+
+1. How do you create Nested Routes react-router-dom configuration?
+
+A. Nested routes achives by nested children or by childen of childen
+
+const AppRouter=createBrowserRouter([{
+    path:'/',
+    element:<appLayout/>
+    children:{
+        path:'/profile',
+        element:<Profile/>
+        childen:{
+            path:'aboutus', 
+            element:<AboutUs/>
+        }
+    }
+}]
+
+And in Profile component add <Outlet/>
+
+--------------------------------------------------------
+
+2. Read about createHashRouter and createMemoryRouter from react router docs?
+
+A. createBrowserRouter is most recommeded router but createHashRouter uses while client side configuration denied by server it may happen in shared server
+   Using hasg (#) portion of the url for routing
+    .It is less SEO friendly
+    .Harder to share specific url
+    .Ugly URL
+
+    createMemoryRouter: create a router state that keeps in memory rather than usin browser URL, It using for non browser environment.
+
+--------------------------------------------------------
+
+3. What is the order of life cycle method calls in class based Components?
+
+A.  1) Constructor of Class
+    2) render methord
+    3) componentDidMount
+    
+    if any new prop or state change 
+
+    4) componentDidUpdate
+    5)componentWillUnmount
+
+
+    if having child life cycle will be
+
+    parent Constructor
+    parent render
+    child Constructor
+    child render
+    child componentDidMount
+    parent componentDidMount
+
+-------------------------------------------------------------
+
+4. why do we use componentDidMount?
+
+A. for side effect, API calls 
+
+componentDidMount is a lifecycle method in React that is called after a component has been rendered to the DOM. 
+It is the ideal place to make any API calls or setup any subscriptions that may be needed by the component.
+
+This method is useful because it allows you to perform any setup that requires the component to be fully rendered and
+ visible in the DOM. For example, if you need to fetch data from an API and display it in the component, you would make the API call in componentDidMount. 
+ This ensures that the component has already been rendered and the DOM updated before the data is received and the component updated again.
+
+Another use case is that, if you want to set some initial state value or want to call some function which you want to 
+fire only once when the component renders first time then you can use componentDidMount.
+
+In summary, componentDidMount is used to perform setup that requires the component to be fully rendered and visible in the DOM, 
+and when you want to set some initial state value or want to call some function which you want to fire only once when the component renders first time.
+
+---------------------------------------------------------
+
+5. Why do we use componentWillUnmount ? Show with example
+
+A. componentWillUnmount is a lifecycle method in React that is called just before a component is removed from the DOM. 
+It is the last method that is called before the component is destroyed.
+
+This method is useful for cleaning up any resources or side-effects that the component may have created.
+ One common use case for this method is to stop any timers that were started in componentDidMount.
+  For example, if you started a setInterval in componentDidMount to update some state every few seconds, you would stop that interval in componentWillUnmount.
+
+Here's an example of how you might use componentWillUnmount with setInterval:
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.setState(prevState => ({ seconds: prevState.seconds + 1 }));
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return <p>Seconds: {this.state.seconds}</p>;
+  }
+}
+In this example, componentDidMount starts an interval that updates the seconds state variable every second. 
+componentWillUnmount is then used to stop the interval when the component is about to be removed from the DOM. 
+This is done by calling clearInterval and passing in the interval ID that was saved in a class variable.
+
+In summary, componentWillUnmount is used to clean up any resources or side-effects that the component may have created, 
+For example, if you started a setInterval in componentDidMount to update some state every few seconds,
+ you would stop that interval in componentWillUnmount.
+
+
+6. Why do we use Super(props) in constructor?
+
+A. In React, the constructor method is used to initialize the component's state and bind event handlers. 
+The super(props) call is used to pass the props that were passed to the component to the parent constructor.
+
+When you extend a class in JavaScript, the child class constructor needs to call the parent class constructor with the super() method
+ before it can use this. This is because this is not defined until super() is called.
+
+So, when you define a constructor in a React component, you need to call super(props)
+before you can use this.props to access the props passed to the component. This is because this.props is not defined until super(props) is called.
+
+Here is an example of how you might use super(props) in a constructor:
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: props.initialValue };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    // do something with this.props and this.state
+  }
+  render() {
+    return <button onClick={this.handleClick}>{this.state.value}</button>;
+  }
+}
+In this example, the super(props) call is used to pass the props object to the parent constructor, and it's done before the state is defined.
+
+In summary, When you extend a class in JavaScript, the child class constructor needs to call the parent class constructor
+with the super() method before it can use this. This is because this is not defined until super() is called. So,
+when you define a constructor in a React component, you need to call super(props) before you can use this.props to access the props passed to the component.
+
+----------------------------------------------------------------------
+
+7. why can't we have the callback function of useEffect async?
+
+A. The callback function of useEffect is not allowed to be async because the React hooks must be called synchronously.
+
+The useEffect hook is used to synchronize a component with an external system, such as a browser API or a web socket.
+ When the component is rendered, useEffect schedules a synchronous update to the component, and then React updates the component in the next render cycle.
+
+An async function, on the other hand, is non-blocking and returns immediately, allowing other code to execute in the meantime. 
+This means that if the callback function of useEffect were async, React would not be able to correctly schedule the update
+and synchronize the component with the external system.
+
+React will execute the useEffect callback synchronously, so if you want to make some async operation you can use something 
+like async-await inside the function passed to useEffect
+
+
+useEffect(() => {
+  const fetchData = async () => {
+    const res = await axios.get("https://example.com/data");
+    setData(res.data);
+  }
+  fetchData();
+}, []);
+In summary, The callback function of useEffect is not allowed to be async because the React hooks must be called synchronously. 
+React will execute the useEffect callback synchronously, so if you want to make some async operation you can use something 
+like async-await inside the function passed to useEffect.
+
+

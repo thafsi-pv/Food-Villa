@@ -1,147 +1,341 @@
-*{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-}
-.bg-red{
-    background-color: red;
-}
-.color{color: rebeccapurple;}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    height: 75px;
-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+/* * {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
 }
-.nav{
-    margin-top: 10px;
+.bg-red {
+  background-color: red;
 }
-.nav-items{
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-around;
+.color {
+  color: rebeccapurple;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 75px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.nav {
+  margin-top: 10px;
+}
+.nav-items {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
 }
 .nav-items > li {
-    display: flex;
-    padding: 20px;
-    list-style: none;
-    font-weight: 500;
-    justify-items:center;
+  display: flex;
+  padding: 20px;
+  list-style: none;
+  font-weight: 500;
+  justify-items: center;
 }
 
-.logo{
-    font-size: 25px;
-    padding: 20px 0px 0px 30px;
-    margin-top: 0;
-    font-weight: bold;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+.logo {
+  font-size: 25px;
+  padding: 20px 0px 0px 30px;
+  margin-top: 0;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  vertical-align: bottom;
 }
 
-.logospan{
-    color: orange;
+.logospan {
+  color: orange;
+  margin-top: 5px;
+  vertical-align: baseline;
 }
 
-.ico{
-    width:20px;
-    height:20px;
-   padding-right: 5px;
+.ico {
+  width: 20px;
+  height: 20px;
+  padding-right: 5px;
 }
 
-.restroimg{
-    width: 254px;
-    height: 160px;
+.restroimg {
+  width: 242px;
+  height: 160px;
 }
-.restro{
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    width: 260px;
-    margin-bottom: 15px;
+.restro {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 260px;
+  margin-bottom: 15px;
+  margin: 10px;
 }
 
-.restroname{
-    font-size: 17px;
-    font-weight: 500;
-    word-break: break-word;
+.restroname {
+  font-size: 17px;
+  font-weight: 500;
+  word-break: break-word;
 }
-.cusine{
-    color: #686b78;
-    font-size: 13px;
-    margin-top: 4px;
-
+.cusine {
+  color: #686b78;
+  font-size: 13px;
+  margin-top: 4px;
 }
-.restrostar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 18px;
-    font-size: 12px;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    color: #535665;
+.restrostar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 12px;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  color: #535665;
 }
 
 .starcont {
-    background-color: #48c479;
-    color: #fff;
+  background-color: #48c479;
+  color: #fff;
 }
 
 .starico {
-    height: 20px;
-    width: 13px;
-    padding: 0 5px;
-    font-weight: 400;
+  height: 20px;
+  width: 13px;
+  padding: 0 5px;
+  font-weight: 400;
 }
 
 .star {
-    font-size: 10px;
-    margin-right: 4px;
-    position: relative;
-    top: -1px;
+  font-size: 10px;
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
 }
 .couponcont {
-    border-top: 1px solid #e9e9eb;
-    padding-top: 14px;
-    margin-top: 14px;
-    color: #8a584b;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    font-weight: 600;
+  border-top: 1px solid #e9e9eb;
+  padding-top: 14px;
+  margin-top: 14px;
+  color: #8a584b;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 600;
 }
-.offerico{
-        width: 22px;
-        height: 32px;
-        margin-right: 4px;
-        transform: rotate3d(0);
-        -ms-transform-origin: center center;
-        transform-origin: center center;
-        
+.offerico {
+  width: 22px;
+  height: 32px;
+  margin-right: 4px;
+  transform: rotate3d(0);
+  -ms-transform-origin: center center;
+  transform-origin: center center;
 }
 
 .sNAfh {
-    font-weight: 400;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .hovernow {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .hovernow:hover {
-    box-shadow: 0 3px 5px rgba(101, 101, 101, 0.8);
-    cursor: pointer;
-  }
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease-in-out;
+}
 
-  .bodycontainer{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: auto;
-    width: 1200px;
-    margin-top: 50px;
+.hovernow:hover {
+  box-shadow: 0 3px 5px rgba(101, 101, 101, 0.8);
+  cursor: pointer;
+}
+
+.bodycontainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 1200px;
+  margin-top: 50px;
+  flex-direction: column;
+  position: relative;
+}
+
+.restroListContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.searchContainer {
+  margin: 10px;
+}
+.txtSearch {
+  padding: 10px;
+  width: 50%;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.btnSearch {
+  padding: 10px 20px;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 5px;
+}
+.btnSearch:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.footerContainer {
+  height: 44px;
+  width: 100%;
+  background: rgb(247, 243, 243);
+  text-align: right;
+  position: block;
+  bottom: 0;
+}
+
+.footerContainer > p {
+  padding: 10px;
+  color: gray;
+  vertical-align: baseline;
+}
+
+.heartIco {
+  color: rgb(194, 4, 4);
+  width: 25px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.d-flex {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f2f5f7;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 300px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  max-width: 100%;
+  background-color: #fff;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.card-img {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.card-img img {
+  position: absolute;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  line-height: 1.33;
+  font-weight: 700;
+}
+.card-title.skeleton {
+  min-height: 28px;
+  border-radius: 4px;
+}
+
+.card-intro {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+.card-intro.skeleton {
+  min-height: 72px;
+  border-radius: 4px;
+}
+
+.skeleton {
+  background-color: #e2e5e7;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0)
+  );
+  background-size: 40px 100%;
+  background-repeat: no-repeat;
+  background-position: left -40px top 0;
+  -webkit-animation: shine 1s ease infinite;
+  animation: shine 1s ease infinite;
+}
+
+@-webkit-keyframes shine {
+  to {
+    background-position: right -40px top 0;
   }
+}
+
+@keyframes shine {
+  to {
+    background-position: right -40px top 0;
+  }
+}
+.container {
+  position: relative;
+  top: 50;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.errorcont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.errorimg {
+  width: 150px;
+  height: 150px;
+}
+
+.errorico {
+  width: 250px;
+  height: 250px;
+}
+
+*{
+    text-decoration: none;
+}
+
+.menu{
+    display: flex;
+} */

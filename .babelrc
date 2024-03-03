@@ -1,3 +1,17 @@
 {
-    "plugins": [ ["transform-remove-console", { "exclude": [ "error", "warn"] }] ]
-  }
+  //"plugins": [ ["transform-remove-console", { "exclude": [ "error", "warn"] }] ]
+
+  "presets": [
+    // This code is part of a configuration file for Babel,
+    // a JavaScript compiler. It tells Babel to use the "@babel/preset-env" preset and to target
+    //the current version of Node.js when compiling the code.
+    // This ensures that the code is compatible with the current version of Node.js.
+    ["@babel/preset-env", { "targets": { "node": "current" } }],
+
+    // This code is part of a configuration file for Babel,
+    // a JavaScript compiler. It specifies that the "@babel/preset-react" preset should be used,
+    // and that the runtime should be set to "automatic".
+    //This means that Babel will automatically detect the version of React being used and compile the code accordingly.
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ]
+}

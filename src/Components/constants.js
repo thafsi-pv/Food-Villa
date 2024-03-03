@@ -1880,3 +1880,7 @@ export const restaurentList=[
         "subtype": "basic"
     }
 ]
+
+export const RESTRO_MENU_URL="https://www.swiggy.com/dapi/menu/v4/full?lat=10.9166586&lng=75.92451179999999&menuId=";
+
+export const RESTRO_LIST_URL="https://www.swiggy.com/dapi/restaurants/list/v5?lat=10.9166586&lng=75.92451179999999&page_type=DESKTOP_WEB_LISTING"
